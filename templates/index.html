@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %}P & Ł Craft{% endblock %}
+
+{% block content %}
+
+<section id="header">
+    <a href=""><div class="logo"></div></a>
+
+    <div class="menu">
+        <!-- <i class="fas fa-bars"></i> -->
+        <li><a href="#bagpack">bagpacks</a></li>
+        <li><a href="#made-used">made-used</a></li>
+        <li><a href="#contact">contact</a></li>
+    </div>
+</section>
+
+<hr>
+
+<section id="bagpack">
+    <h1>bagpacks</h1>
+<!--    {% for item in items %}-->
+<!--        <img src="static/img/items/1.jpg" alt="">-->
+<!--    {% endfor %}-->
+    <div class="project">
+        <div class="image_item">
+            <img src="static/img/items/1.jpg" alt="">
+        </div>
+        <div class="about">
+            <h3>waterproof</h3>
+            <p>Made of printed, waterproof fabrics.</p>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="image_item">
+            <img src="static/img/items/2.jpg" alt="">
+        </div>
+        <div class="about">
+            <h3>cotton cord</h3>
+            <p>The used, thick, 14-millimeter cotton cord with a smooth surface, does not stick to the arms.</p>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="image_item">
+            <img src="static/img/items/3.jpg" alt="">
+        </div>
+        <div class="about">
+            <h3>many colors</h3>
+            <p>Endless patterns!</p>
+        </div>
+    </div>
+    <div class="project">
+        <div class="image_item">
+            <img src="static/img/items/4.jpg" alt="">
+        </div>
+        <div class="about">
+            <h3>strong</h3>
+            <p>Material does not wash out, the cord does not stretch.</p>
+        </div>
+    </div>
+    <div class="project">
+        <div class="image_item">
+            <img src="static/img/items/5.jpeg" alt="">
+        </div>
+        <div class="about">
+            <h3>functionality</h3>
+            <p>Great for any occasion!</p>
+        </div>
+    </div>
+    <div class="project">
+        <div class="image_item">
+            <img src="static/img/items/6.jpeg" alt="">
+        </div>
+        <div class="about">
+            <h3>Nazwa plecaka</h3>
+            <p>Two size to choose!</p>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="made-used">
+    <h1>made-used</h1>
+
+    {% for item in made_used %}
+        <div class="project">
+            <div class="image_item">
+                <img src="static/img/made-used/{{ item }}" alt="">
+            </div>
+        </div>
+    {% endfor %}
+
+</section>
+
+<hr>
+
+<section id="contact">
+    <h1>contact</h1>
+    <div class="social">
+        <a href="tel:696 438 015"><i class="fas fa-phone"></i></a>
+        <a href="mailto:synvoret@gmail.com"><i class="far fa-envelope"></i></a>
+    </div>
+</section>
+
+<hr>
+
+<section id="footer">
+    <div>&copy; P & Ł Craft, 2021 - 2022 - 2023</div>
+</section>
+
+{% endblock %}
