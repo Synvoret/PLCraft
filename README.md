@@ -1,3 +1,3 @@
 # PLCraft
 
-Simple Flask-App
+Simple Django-App

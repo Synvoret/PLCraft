@@ -1,0 +1,25 @@
+.photo-container img {
+    display: block;
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    position: static;
+}
+
+.bagpack-img,
+.crochet-img {
+    position: absolute;
+    width: 450px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 black;
+    transition: transform .5s ease;
+    backdrop-filter: blur(2px);
+}
+
+.bagpack-img:hover,
+.crochet-img:hover {
+    transform: scale(1.9) !important;
+    z-index: 1000 !important;
+    /* box-shadow: 0 0 20px 0 dodgerblue; */
+}

@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'welcome/css/welcome.css' %}"> {% endblock styles %}
+
+{% block content %}
+        <div class="container photo-container">
+            <h1>welcome</h1>
+            {% for bagpack in bagpacks %}
+                <img class="img-thumbnail welcome-img bagpack-img" src="{{ bagpack.image.url }}" alt="{{ bagpack.name }}">
+            {% endfor %}
+        </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'welcome/js/welcome.js' %}"></script>
+{% endblock scripts %}

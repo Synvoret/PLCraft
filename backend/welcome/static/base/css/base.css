@@ -1,0 +1,102 @@
+:root {
+    --spring: radial-gradient(circle, rgba(102, 153, 102, 0.6) 10%, rgba(230, 230, 153, 0.6) 100%);
+    --summer: radial-gradient(circle, rgba(102, 128, 204, 0.6) 10%, rgba(230, 230, 153, 0.6) 100%);
+    --autumn: radial-gradient(circle, rgba(204, 102, 51, 0.6) 30%, rgba(230, 230, 153, 0.6) 100%);
+    --winter: radial-gradient(circle, rgba(102, 128, 204, 0.6) 10%, rgba(240, 240, 240, 0.6) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+#header {
+    position: sticky;
+    margin: 30px 0;
+    top: 0;
+    z-index: 103
+
+}
+
+h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 4px 3px 4px #000000;
+    text-align: center;
+    position: relative;
+    z-index: 9999
+
+}
+
+.logo-link,
+.menu-link {
+    display: flex;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 black;
+    backdrop-filter: blur(2px);
+    padding: 5px;
+    transition: box-shadow 0.3s;
+} 
+
+.logo-link:hover,
+.menu-link:hover {
+    box-shadow: 0 0 30px 0 dodgerblue;
+}
+
+.logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    align-items: center;
+    object-fit: contain;
+}
+
+li {
+    margin: 0;
+    padding: 0 10px;
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    align-items: center;
+    height: 100%;
+}
+
+.x {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    position: relative;
+    transition: font-style 0.2s;
+}
+
+.x::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(90deg, transparent, dodgerblue);
+    transition: width .2s;
+}
+
+.x:hover::after {
+    width: 100%;
+} 
+
+
+
+/* FOOTER */
+.footer {
+    position: fixed;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 black;
+    backdrop-filter: blur(2px);
+    color: #222;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+}
