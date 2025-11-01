@@ -15,6 +15,5 @@ def welcome_view(request):
         "bagpacks": select_bagpacks,
         "crochets": select_crochets,
     }
-    print(context)
 
     return render(request, "welcome/welcome.html", context)

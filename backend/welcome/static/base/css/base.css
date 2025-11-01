@@ -65,6 +65,8 @@ li {
 
 .x {
     text-decoration: none;
+    background-color: transparent;
+    border: none;
     color: #000;
     text-transform: uppercase;
     position: relative;

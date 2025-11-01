@@ -11,8 +11,6 @@ urlpatterns = [
     path("api/", include("api.urls")),
     # Application paths
     path("", include("welcome.urls")),
-    path("", include("bagback.urls")),
-    path("", include("crochet.urls")),
 ]
 
 # Static and media files serving during development

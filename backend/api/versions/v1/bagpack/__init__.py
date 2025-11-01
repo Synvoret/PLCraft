@@ -1,2 +1,8 @@
 from .serializers import BagpackSerializer
-from .views import BagpackView, BackpackDetailView
+from .views import (
+    BagpackListView,
+    BagpackCreateView,
+    BagpackDetailView,
+    BagpackUpdateView,
+    BagpackDeleteView,
+)
