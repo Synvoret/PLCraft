@@ -1,57 +1,30 @@
-// document.addEventListener("DOMContentLoaded", function (e) {
-//     const container = document.querySelector(".photo-container");
-//     e.preventDefault();
+document.getElementById('bagpacks-show').addEventListener('click', () => {
+    fetch('/api/v1/bagpacks/')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            const photoContainer = document.getElementById('photoContainer');
 
-//     if (!container) return;
+            data.forEach((bagpack, index) => {
+                const img = document.createElement('img');
+                img.src = bagpack.image;
+                img.alt = bagpack.name;
+                img.classList.add('welcome-img', 'bagpack-img');
+                img.style.position = 'absolute';
 
-//     const images = container.querySelectorAll("img");
-//     images.forEach(img => {
-//         if (!img.classList.contains("bagpack-img")) {
-//             img.remove();
-//         } else {
-//             // Usuń klasę 'welcome-img'
-//             img.classList.remove("welcome-img");
-//         }
-//     });
+                const offsetX = (Math.random() - 0.5) * 300;
+                const offsetY = (Math.random() - 0.5) * 300;
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
 
-//     container.style.display = "flex";
-//     container.style.flexDirection = "column";
-//     container.style.alignItems = "center";
-// });
+                img.style.left = `${centerX + offsetX}px`;
+                img.style.top = `${centerY + offsetY}px`;
+                img.style.transform = `rotate(0deg)`;
+                img.style.zIndex = index + 1;
 
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const bagpacksLink = document.getElementById('bagpacks-link');
-    const photoContainer = document.querySelector('.photo-container');
-
-    if (bagpacksLink && photoContainer) {
-        bagpacksLink.addEventListener('click', function (e) {
-            e.preventDefault(); // zapobiega przeładowaniu strony
-            fetch('/bagpacks/') // endpoint Django zwracający HTML z obrazkami
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Błąd sieci: ' + response.status);
-                    }
-                    return response.text(); // odbieramy HTML
-                })
-                .then(html => {
-                    photoContainer.innerHTML = html;
-
-                    // Ustawiamy układ kolumnowy
-                    photoContainer.style.display = 'flex';
-                    photoContainer.style.flexDirection = 'column';
-                    photoContainer.style.alignItems = 'center';
-
-                    const images = photoContainer.querySelectorAll('.bagpack-img');
-                    images.forEach(img => {
-                        img.style.width = '300px';
-                        img.style.marginBottom = '10px';
-                    });
-                })
-                .catch(error => {
-                    console.error('Wystąpił błąd:', error);
-                });
+            });
+        })
+        .catch(error => {
+            console.error(error);
         });
-    }
 });
