@@ -4,6 +4,6 @@ from crochet.models import Crochet
 
 @admin.register(Crochet)
 class CrochetAdmin(admin.ModelAdmin):
-    list_display = ("name", "type")
-    list_filter = ("type",)
-    search_fields = ("name",)
+    list_display = ("name", "category", "type")
+    list_filter = ("category", "type")
+    search_fields = ("name", "category", "type")

@@ -19,8 +19,8 @@
     backdrop-filter: blur(2px);
 } 
 
-.bagpack-img:hover,
+/* .bagpack-img:hover,
 .crochet-img:hover {
     transform: scale(1.2) !important;
     z-index: 1000 !important;
-} 
+}  */

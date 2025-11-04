@@ -7,18 +7,18 @@ window.addEventListener('DOMContentLoaded', () => {
     const centerY = photoContainerRect.height / 2;
 
     images.forEach((img, index) => {
-        const imgWidth = img.width;
-        const imgHeight = img.height;
+        // const imgWidth = img.width;
+        // const imgHeight = img.height;
 
-        const offsetX = (Math.random() - 0.5) * 300;
-        const offsetY = (Math.random() - 0.5) * 300;
+        // const offsetX = (Math.random() - 0.5);
+        // const offsetY = (Math.random() - 0.5);
 
-        img.style.left = `${centerX - imgWidth / 2 + offsetX}px`;
-        img.style.top = `${centerY - imgHeight / 2 + offsetY}px`;
+        // img.style.left = `${centerX - imgWidth / 2 + offsetX}px`;
+        // img.style.top = `${centerY - imgHeight / 2 + offsetY}px`;
 
-        const randomRotation = (Math.random() * 60) - 30;
-        img.style.transform = `rotate(${randomRotation}deg)`;
+        // const randomRotation = (Math.random() * 60) - 30;
+        // img.style.transform = `rotate(${randomRotation}deg)`;
 
-        img.style.zIndex = index + 1;
+        // img.style.zIndex = index + 1;
     });
 });

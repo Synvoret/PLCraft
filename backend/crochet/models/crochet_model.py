@@ -3,15 +3,21 @@ from django.db import models
 
 class Crochet(models.Model):
 
+    categories = [
+        ("animal", "animal"),
+        ("people", "people"),
+        ("item", "item"),
+    ]
+
     types = [
-        ("Animal", "Animal"),
-        ("People", "People"),
-        ("Item", "Item"),
+        ("single", "single"),
+        ("multi", "multi"),
     ]
 
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="crochets/")
-    type = models.CharField(max_length=10, choices=types)
+    category = models.CharField(max_length=10, default="animal", choices=categories)
+    type = models.CharField(max_length=10, default="single", choices=types)
 
     def __str__(self):
         return self.name

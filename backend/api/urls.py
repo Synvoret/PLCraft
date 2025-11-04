@@ -2,19 +2,20 @@ from django.urls import path, include
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from .utils import get_latest_api_version
+from api.versions.utils import get_latest_api_version
 
 # Actual API version
 actual_api_version = get_latest_api_version()
+print(f"Using API version: {actual_api_version}")
 
 schema_view = get_schema_view(
     openapi.Info(
         title="PLCraft API",
         default_version=actual_api_version,
-        description="API documentation for PLCraft project",
+        description=f"API documentation for PLCraft project - version {actual_api_version}",
     ),
     public=True,
-    permission_classes=(permissions.AllowAny,),
+    permission_classes=(permissions.IsAuthenticated,),
 )
 
 urlpatterns = [

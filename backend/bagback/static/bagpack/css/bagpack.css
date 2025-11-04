@@ -1,25 +1,26 @@
-.photo-container img {
-    display: block;
-    margin-bottom: 10px;
-    max-width: 100%;
-    height: auto;
-    position: static;
+.photo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .bagpack-img,
 .crochet-img {
-    position: absolute;
-    width: 450px;
+    width: 350px;
     height: auto;
+    border: 0;
     border-radius: 20px;
-    box-shadow: 0 0 20px 0 black;
-    transition: transform .5s ease;
-    backdrop-filter: blur(2px);
-}
+    transition: transform .2s ease;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+} 
 
-.bagpack-img:hover,
+/* .bagpack-img:hover,
 .crochet-img:hover {
-    transform: scale(1.9) !important;
+    transform: scale(2) !important;
     z-index: 1000 !important;
-    /* box-shadow: 0 0 20px 0 dodgerblue; */
-}
+}  */

@@ -15,7 +15,7 @@
     position: sticky;
     margin: 30px 0;
     top: 0;
-    z-index: 103
+    z-index: 9999;
 
 }
 
@@ -26,7 +26,6 @@ h1 {
     text-shadow: 4px 3px 4px #000000;
     text-align: center;
     position: relative;
-    z-index: 9999
 
 }
 
@@ -101,4 +100,9 @@ li {
     text-align: center;
     padding: 10px;
     z-index: 1000;
+    transition: box-shadow 0.3s;
+}
+
+.footer:hover {
+    box-shadow: 0 0 30px 0 dodgerblue;
 }

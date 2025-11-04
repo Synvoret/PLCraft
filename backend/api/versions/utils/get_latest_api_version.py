@@ -2,7 +2,7 @@ import os
 
 
 def get_latest_api_version():
-    versions_path = os.path.join(os.path.dirname(__file__), "versions")
+    versions_path = os.path.join(os.path.dirname(__file__), "..")
     versions = [
         d
         for d in os.listdir(versions_path)
