@@ -31,12 +31,14 @@ class AllUrlsView(generics.ListAPIView):
             for pattern in patterns:
                 if isinstance(pattern, URLPattern):
                     path_str = prefix + str(pattern.pattern)
-                    urls.append({
-                        "path": path_str,
-                        "name": pattern.name or "",
-                        "view": f"{pattern.callback.__module__}.{pattern.callback.__name__}",
-                        "full_url": "/" + path_str.lstrip("/"),
-                    })
+                    urls.append(
+                        {
+                            "path": path_str,
+                            "name": pattern.name or "",
+                            "view": f"{pattern.callback.__module__}.{pattern.callback.__name__}",
+                            "full_url": "/" + path_str.lstrip("/"),
+                        }
+                    )
                 elif isinstance(pattern, URLResolver):
                     list_urls(pattern.url_patterns, prefix + str(pattern.pattern))
 
