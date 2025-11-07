@@ -5,11 +5,10 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    # Admin path
     path("admin/", admin.site.urls),
-    # API path
     path("api/", include("api.urls")),
     # Application paths
+    path("", include("account.urls")),
     path("", include("welcome.urls")),
     path("", include("bagback.urls")),
     path("", include("crochet.urls")),
