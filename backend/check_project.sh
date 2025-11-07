@@ -20,9 +20,5 @@ autoflake --remove-all-unused-imports --recursive --ignore-init-module-imports -
 echo "🧪 djlint - checking Django templates"
 djlint templates/ --check
 
-# Check all Django URLs
-echo "🌐 Django - listing all URLs"
-python manage.py list_urls
-
 # to run this script, use:
 # bash backend/check_project.sh

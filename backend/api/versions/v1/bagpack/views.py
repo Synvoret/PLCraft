@@ -1,35 +1,30 @@
-from rest_framework import generics
+from rest_framework import viewsets
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
+from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.permissions import IsAdminUser
+from django_filters.rest_framework import DjangoFilterBackend
 from bagback.models import Bagpack
 from .serializers import BagpackSerializer
 
 
-class BagpackListView(generics.ListAPIView):
-    queryset = Bagpack.objects.all()
-    serializer_class = BagpackSerializer
-
-
-class BagpackCreateView(generics.CreateAPIView):
+class BagpackViewSet(viewsets.ModelViewSet):
     queryset = Bagpack.objects.all()
     serializer_class = BagpackSerializer
     parser_classes = (MultiPartParser, FormParser)
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["season"]
+    search_fields = ["name", "season"]
+    permission_classes_by_action = {
+        "list": [],
+        "retrieve": [],
+        "create": [IsAdminUser],
+        "update": [IsAdminUser],
+        "partial_update": [IsAdminUser],
+        "destroy": [IsAdminUser],
+    }
 
-
-class BagpackDetailView(generics.RetrieveAPIView):
-    queryset = Bagpack.objects.all()
-    serializer_class = BagpackSerializer
-    lookup_field = "pk"
-
-
-class BagpackUpdateView(generics.UpdateAPIView):
-    queryset = Bagpack.objects.all()
-    serializer_class = BagpackSerializer
-    lookup_field = "pk"
-    parser_classes = (MultiPartParser, FormParser)
-
-
-class BagpackDeleteView(generics.DestroyAPIView):
-    queryset = Bagpack.objects.all()
-    serializer_class = BagpackSerializer
-    lookup_field = "pk"
+    def get_permissions(self):
+        return [
+            permission()
+            for permission in self.permission_classes_by_action.get(self.action, [])
+        ]

@@ -19,6 +19,7 @@ class Bagpack(models.Model):
     image = models.ImageField(upload_to="bagpacks/")
     season = models.CharField(max_length=10, choices=seasons)
     type = models.CharField(max_length=10, default="single", choices=types)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

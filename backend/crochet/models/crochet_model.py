@@ -18,6 +18,7 @@ class Crochet(models.Model):
     image = models.ImageField(upload_to="crochets/")
     category = models.CharField(max_length=10, default="animal", choices=categories)
     type = models.CharField(max_length=10, default="single", choices=types)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

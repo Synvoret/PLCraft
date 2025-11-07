@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 import environ
 
-# choosen environment
+# choosen HERE environment
 env_name = os.getenv("DJANGO_ENV", "dev")
 
 # choosen environment file

@@ -6,7 +6,6 @@ from api.versions.utils import get_latest_api_version
 
 # Actual API version
 actual_api_version = get_latest_api_version()
-print(f"Using API version: {actual_api_version}")
 
 schema_view = get_schema_view(
     openapi.Info(

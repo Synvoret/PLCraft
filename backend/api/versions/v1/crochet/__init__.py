@@ -1,7 +1,6 @@
 from .serializers import CrochetSerializer
 from .views import (
-    CrochetListView,
-    CrochetCreateView,
+    CrochetListCreateView,
     CrochetDetailView,
     CrochetUpdateView,
     CrochetDeleteView,
