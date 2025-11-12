@@ -1,3 +1,0 @@
-# PLCraft
-
-Simple Django-App
