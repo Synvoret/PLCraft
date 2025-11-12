@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from bagback.models.bagpack_model import Bagpack
+from bagpack.models.bagpack_model import Bagpack
 from crochet.models.crochet_model import Crochet
 
 

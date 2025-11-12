@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("bagback", "0001_initial"),
+        ("bagpack", "0001_initial"),
     ]
 
     operations = [

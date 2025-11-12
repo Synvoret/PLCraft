@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("bagback", "0002_bagpack_season"),
+        ("bagpack", "0002_bagpack_season"),
     ]
 
     operations = [

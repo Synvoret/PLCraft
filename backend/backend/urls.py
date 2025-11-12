@@ -10,7 +10,7 @@ urlpatterns = [
     # Application paths
     path("", include("account.urls")),
     path("", include("welcome.urls")),
-    path("", include("bagback.urls")),
+    path("", include("bagpack.urls")),
     path("", include("crochet.urls")),
 ]
 

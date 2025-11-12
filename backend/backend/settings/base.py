@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     # apps
     "account",
     "welcome",
-    "bagback",
+    "bagpack",
     "crochet",
 ]
 
