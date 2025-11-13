@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class BagpackConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "bagpack"
+    name = "apps.bagpack"

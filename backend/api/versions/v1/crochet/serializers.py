@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from crochet.models import Crochet
+from apps.crochet.models import Crochet
 
 
 class CrochetSerializer(serializers.ModelSerializer):

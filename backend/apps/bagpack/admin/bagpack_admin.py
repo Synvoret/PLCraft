@@ -1,5 +1,5 @@
 from django.contrib import admin
-from bagpack.models import Bagpack
+from apps.bagpack.models import Bagpack
 
 
 @admin.register(Bagpack)

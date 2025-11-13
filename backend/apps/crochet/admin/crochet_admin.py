@@ -1,5 +1,5 @@
 from django.contrib import admin
-from crochet.models import Crochet
+from apps.crochet.models import Crochet
 
 
 @admin.register(Crochet)

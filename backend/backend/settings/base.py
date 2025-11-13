@@ -26,10 +26,10 @@ INSTALLED_APPS = [
     "api",
     "django_filters",
     # apps
-    "account",
-    "welcome",
-    "bagpack",
-    "crochet",
+    "apps.account",
+    "apps.welcome",
+    "apps.bagpack",
+    "apps.crochet",
 ]
 
 MIDDLEWARE = [

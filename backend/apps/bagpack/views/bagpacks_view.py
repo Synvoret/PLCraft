@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from bagpack.models import Bagpack
+from apps.bagpack.models import Bagpack
 
 
 def bagpacks_view(request):

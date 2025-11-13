@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from bagpack.models.bagpack_model import Bagpack
-from crochet.models.crochet_model import Crochet
+from apps.bagpack.models import Bagpack
+from apps.crochet.models import Crochet
 
 
 def welcome_view(request):

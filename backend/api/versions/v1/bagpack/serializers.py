@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from bagpack.models import Bagpack
+from apps.bagpack.models import Bagpack
 
 
 class BagpackSerializer(serializers.ModelSerializer):

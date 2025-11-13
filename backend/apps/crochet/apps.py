@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class CrochetConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "crochet"
+    name = "apps.crochet"

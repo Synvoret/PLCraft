@@ -8,10 +8,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("api.urls")),
     # Application paths
-    path("", include("account.urls")),
-    path("", include("welcome.urls")),
-    path("", include("bagpack.urls")),
-    path("", include("crochet.urls")),
+    path("", include("apps.account.urls")),
+    path("", include("apps.welcome.urls")),
+    path("", include("apps.bagpack.urls")),
+    path("", include("apps.crochet.urls")),
 ]
 
 # Static and media files serving during development

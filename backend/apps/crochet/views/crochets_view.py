@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from crochet.models import Crochet
+from apps.crochet.models import Crochet
 
 
 def crochets_view(request):
