@@ -11,7 +11,7 @@
                  width="150">
         </a>
         <!-- Hamburger -->
-        <button class="navbar-toggler"
+        {% comment %} <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarToggleExternalContent"
@@ -19,9 +19,9 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> {% endcomment %}
         <!-- Menu -->
-        <div class="collapse navbar navbar-collapse justify-content-end"
+        {% comment %} <div class="collapse navbar navbar-collapse justify-content-end"
              id="navbarToggleExternalContent">
             <ul class="navbar-menu nav justify-content-end">
                 <li class="nav-item">
@@ -30,11 +30,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'bagpacks' %}"><span class="line">bagpacks</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'crochets' %}"><span class="line">crochets</span></a>
-                </li>
             </ul>
-        </div>
+        </div> {% endcomment %}
     </div>
 </nav>
 {% block scripts %}

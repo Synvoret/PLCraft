@@ -1,12 +1,12 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.welcome-img');
-    const photoContainer = document.querySelector('.photo-container');
-    const photoContainerRect = photoContainer.getBoundingClientRect();
+    const welcomeImages = document.querySelectorAll('.welcome-img');
+    const welcomeImagesContainer = document.querySelector('.welcome-imgs');
+    const photoContainerRect = welcomeImagesContainer.getBoundingClientRect();
 
     const centerX = photoContainerRect.width / 2;
     const centerY = photoContainerRect.height / 2;
 
-    images.forEach((img, index) => {
+    welcomeImages.forEach((img, index) => {
         // const imgWidth = img.width;
         // const imgHeight = img.height;
 

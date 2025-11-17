@@ -8,9 +8,9 @@
     welcome
 {% endblock heading %}
 {% block content %}
-    <div class="photo-container">
+     <div class="photo-container">
         {% for bagpack in bagpacks %}
-            <img class="img-thumbnail welcome-img bagpack-img"
+            <img class="img-thumbnail welcome-img"
                  src="{{ bagpack.image.url }}"
                  alt="{{ bagpack.name }}">
         {% endfor %}

@@ -1,15 +1,4 @@
-.photo-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.bagpack-img,
-.crochet-img {
+.welcome-img {
     width: 350px;
     height: auto;
     border: 0;
@@ -17,10 +6,9 @@
     transition: transform .2s ease;
     background-color: transparent;
     backdrop-filter: blur(2px);
-} 
+}
 
-/* .bagpack-img:hover,
-.crochet-img:hover {
+/* .welcome-img:hover {
     transform: scale(1.2) !important;
     z-index: 1000 !important;
 }  */

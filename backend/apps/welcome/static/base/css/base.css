@@ -20,6 +20,16 @@ main {
     flex: 1;
 }
 
+.photo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 
 
 /* HEADING */
