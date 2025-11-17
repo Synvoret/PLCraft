@@ -1,7 +1,7 @@
-# Django Project – Bagpack & Crochet Management
+# Django Project – PLCraft Management
 
 ## 📌 Project Overview
-This project is a **Django-based web application** designed for managing user accounts and product catalogs related to **backpacks** and **crochet items**. It provides both a web interface and a versioned API for integration and automation.
+This project is a **Django-based web application** designed for managing user accounts and product catalogs related to **backpacks** and **crochets**. It provides both a web interface and a versioned API for integration and automation.
 
 ---
 
@@ -11,7 +11,7 @@ This project is a **Django-based web application** designed for managing user ac
 - **Crochet Module** – Manage crochet products.
 - **Welcome Module** – Landing page with base layout.
 - **API**:
-  - Versioned endpoints (e.g., `/api/versions/v1/...`).
+  - Versioned endpoints (e.g., `/api/...`).
   - Swagger documentation support.
   - Custom management command `show_urls` to list all available endpoints.
 
@@ -78,28 +78,12 @@ python manage.py test
 ---
 
 ## 📚 API Documentation
-- Swagger UI available at: `/api/docs/` (or configured URL).
+- Swagger UI available at: `/api/swagger/`.
+- Redoc UI available at: `/api/redoc/`.
 - Command to list all endpoints:
    ```bash
    python manage.py show_urls
    ```
-
----
-
-## 🔗 API Endpoints (v1)
-| Endpoint                              | Method | Description                  |
-|--------------------------------------|--------|-----------------------------|
-| `/api/versions/v1/account/register/` | POST   | Register a new user         |
-| `/api/versions/v1/account/login/`    | POST   | User login                  |
-| `/api/versions/v1/bagpack/`          | GET    | List all backpacks          |
-| `/api/versions/v1/bagpack/<id>/`     | GET    | Retrieve backpack details   |
-| `/api/versions/v1/crochet/`          | GET    | List all crochet products   |
-| `/api/versions/v1/crochet/<id>/`     | GET    | Retrieve crochet details    |
-
----
-
-## 🏗 Architecture Diagram
-![Architecture Diagram](architecture_diagram.png)
 
 ---
 
@@ -111,7 +95,7 @@ python manage.py test
 ---
 
 ## 👤 Author
-Łukasz Szabat – M.Sc. Eng.
+Łukasz Szabat
 
 ## 📜 License
-MIT License (or specify your license)
+MIT License

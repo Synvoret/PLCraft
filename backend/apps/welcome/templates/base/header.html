@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
 {% endblock styles %}
 <nav class="navbar navbar-expand-md navbar-light bg-body-tertiary">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Logo -->
         <a class="navbar-brand navbar-logo" href="{% url 'welcome' %}">
             <img src="{% static 'base/img/logo/logo_watermark.png' %}"
@@ -21,7 +21,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Menu -->
-        <div class="collapse navbar-collapse justify-content-end"
+        <div class="collapse navbar navbar-collapse justify-content-end"
              id="navbarToggleExternalContent">
             <ul class="navbar-menu nav justify-content-end">
                 <li class="nav-item">
@@ -32,12 +32,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'crochets' %}"><span class="line">crochets</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}"><span class="line">login</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}"><span class="line">register</span></a>
                 </li>
             </ul>
         </div>
