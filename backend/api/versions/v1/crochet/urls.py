@@ -1,9 +1,10 @@
 from django.urls import path
+
 from api.versions.v1.crochet import (
-    CrochetListCreateView,
-    CrochetDetailView,
-    CrochetUpdateView,
     CrochetDeleteView,
+    CrochetDetailView,
+    CrochetListCreateView,
+    CrochetUpdateView,
 )
 
 urlpatterns = [

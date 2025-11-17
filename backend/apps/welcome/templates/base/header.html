@@ -1,16 +1,48 @@
 {% load static %}
-
-<div id="header" class="container">
-    <div class="row justify-content-between">
-        <div class="col-4">
-            <a href="{% url 'welcome'%}" class="logo-link"><img src="{% static 'base/img/logo/logo_watermark.png' %}" class="rounded mx-auto d-block logo-img"></a>
-        </div>
-        <div class="col-4 d-flex justify-content-center align-items-center menu-link">
-            <ul class="nav">
-                <li class="nav-item"><a class="x" href="{% url 'welcome' %}">home</a></li>
-                <li class="nav-item"><a class="x" href="{% url 'bagpacks' %}">bagpacks</a></li>
-                <li class="nav-item"><a class="x" href="{% url 'crochets' %}">crochets</a></li>
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
+{% endblock styles %}
+<nav class="navbar navbar-expand-md navbar-light bg-body-tertiary">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand navbar-logo" href="{% url 'welcome' %}">
+            <img src="{% static 'base/img/logo/logo_watermark.png' %}"
+                 alt="Logo"
+                 width="150">
+        </a>
+        <!-- Hamburger -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Menu -->
+        <div class="collapse navbar-collapse justify-content-end"
+             id="navbarToggleExternalContent">
+            <ul class="navbar-menu nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'welcome' %}"><span class="line">home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'bagpacks' %}"><span class="line">bagpacks</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'crochets' %}"><span class="line">crochets</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}"><span class="line">login</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}"><span class="line">register</span></a>
+                </li>
             </ul>
         </div>
     </div>
-</div>
+</nav>
+{% block scripts %}
+    <script src="{% static 'base/js/header.js' %}"></script>
+{% endblock scripts %}

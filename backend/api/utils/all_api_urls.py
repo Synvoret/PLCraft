@@ -1,7 +1,7 @@
-from django.urls import get_resolver, URLPattern, URLResolver
+from django.urls import URLPattern, URLResolver, get_resolver
 from rest_framework import generics, serializers
-from rest_framework.permissions import IsAdminUser
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAdminUser
 
 
 class UrlSerializer(serializers.Serializer):
@@ -25,7 +25,7 @@ class AllUrlsView(generics.ListAPIView):
     def get_queryset(self):
         resolver = get_resolver()
         urls = []
-        base_url = self.request.build_absolute_uri("/")
+        self.request.build_absolute_uri("/")
 
         def list_urls(patterns, prefix=""):
             for pattern in patterns:

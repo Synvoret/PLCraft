@@ -1,8 +1,8 @@
-from rest_framework import permissions
-from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from api.utils import get_latest_api_version
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
 
+from api.utils import get_latest_api_version
 
 actual_api_version = get_latest_api_version()
 

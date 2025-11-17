@@ -1,19 +1,21 @@
 {% extends 'base/base.html' %}
 {% load static %}
-
 {% block title %}Bagpacks{% endblock %}
-
-{% block styles %}<link rel="stylesheet" href="{% static 'bagpack/css/bagpack.css' %}"> {% endblock styles %}
-
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'bagpack/css/bagpack.css' %}">
+{% endblock styles %}
+{% block heading %}
+    bagpacks
+{% endblock heading %}
 {% block content %}
-        <h1>bagpacks</h1>
-        <div class="photo-container  d-flex flex-wrap gap-3">
-            {% for bagpack in bagpacks %}
-                <img class="welcome-img bagpack-img" src="{{ bagpack.image.url }}" alt="{{ bagpack.name }}">
-            {% endfor %}
-        </div>
+    <div class="photo-container  d-flex flex-wrap gap-3">
+        {% for bagpack in bagpacks %}
+            <img class="welcome-img bagpack-img"
+                 src="{{ bagpack.image.url }}"
+                 alt="{{ bagpack.name }}">
+        {% endfor %}
+    </div>
 {% endblock content %}
-
 {% block scripts %}
     <script src="{% static 'bagpack/js/bagpack.js' %}"></script>
 {% endblock scripts %}

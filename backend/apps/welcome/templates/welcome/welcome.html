@@ -1,21 +1,21 @@
 {% extends 'base/base.html' %}
 {% load static %}
-
 {% block title %}Welcome{% endblock %}
-
-{% block styles %}<link rel="stylesheet" href="{% static 'welcome/css/welcome.css' %}"> {% endblock styles %}
-
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'welcome/css/welcome.css' %}">
+{% endblock styles %}
+{% block heading %}
+    welcome
+{% endblock heading %}
 {% block content %}
-        <div class="container">
-            <h1 class="title">welcome</h1>
-            <div class="photo-container">
-                {% for bagpack in bagpacks %}
-                    <img class="img-thumbnail welcome-img bagpack-img" src="{{ bagpack.image.url }}" alt="{{ bagpack.name }}">
-                {% endfor %}
-            </div>
-        </div>
+    <div class="photo-container">
+        {% for bagpack in bagpacks %}
+            <img class="img-thumbnail welcome-img bagpack-img"
+                 src="{{ bagpack.image.url }}"
+                 alt="{{ bagpack.name }}">
+        {% endfor %}
+    </div>
 {% endblock content %}
-
 {% block scripts %}
     <script src="{% static 'welcome/js/welcome.js' %}"></script>
     <script src="{% static 'bagpack/js/bagpack.js' %}"></script>

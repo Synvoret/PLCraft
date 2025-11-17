@@ -1,7 +1,6 @@
-from django.urls import path, include
-from api.utils import get_latest_api_version
-from api.utils import schema_view
-from api.utils import AllUrlsView
+from django.urls import include, path
+
+from api.utils import AllUrlsView, get_latest_api_version, schema_view
 
 actual_api_version = get_latest_api_version()
 
