@@ -19,19 +19,19 @@
         {% endblock styles %}
     </head>
     <body>
-        <div class="container">{% include "base/header.html" %}</div>
+        <div class="container fixed-top">{% include "base/header.html" %}</div>
         <div class="container heading">
             <h3>
                 {% block heading %}
                 {% endblock heading %}
             </h3>
         </div>
-        <div class="container">
+        <div class="container content">
             {% block content %}
             {% endblock content %}
         </div>
         <div class="container fixed-bottom">
-            <div class="footer">&copy;P&ŁCraft 2021 - 2025 synvoret@gmail.com</div>
+            <div class="footer radius-blur-shadow-element">&copy;P&ŁCraft 2021 - 2025 synvoret@gmail.com</div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
                 integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

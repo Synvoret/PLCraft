@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "api",
     "django_filters",
     # apps
+    "apps.common",
     "apps.account",
     "apps.welcome",
     "apps.bagpack",

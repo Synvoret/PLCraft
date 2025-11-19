@@ -1,18 +1,10 @@
 .navbar-logo,
 .navbar-menu {
     font-size: 15px;
-    border-radius: 20px;
-    box-shadow: 0 0 5px 0 black;
-    backdrop-filter: blur(2px);
     padding: 5px;
     margin: 5px;
-    transition: box-shadow 0.3s;
 }
 
-.navbar-logo:hover,
-.navbar-menu:hover {
-    box-shadow: 0 0 5px 0 dodgerblue;
-}
 
 .line {
     text-decoration: none;

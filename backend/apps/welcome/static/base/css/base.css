@@ -9,11 +9,8 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     min-height: 100vh;
-    /* display: flex;
-    flex-direction: column; */
 }
 
 main {
@@ -30,10 +27,20 @@ main {
     margin-bottom: 30px;
 }
 
+.radius-blur-shadow-element {
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0 black;
+    backdrop-filter: blur(2px);
+    transition: box-shadow 0.3s;
+}
 
+.radius-blur-shadow-element:hover {
+    box-shadow: 0 0 5px 0 dodgerblue;
+}
 
 /* HEADING */
 .heading {
+    margin-top: 130px;
     text-transform: uppercase;
     color: white;
     text-shadow: 4px 3px 4px #000000;
@@ -43,15 +50,7 @@ main {
 /* FOOTER */
 .footer {
     font-size: 10px;
-    border-radius: 20px;
-    box-shadow: 0 0 5px 0 black;
-    backdrop-filter: blur(2px);
     text-align: center;
     padding: 5px;
     z-index: 1000;
-    transition: box-shadow 0.3s;
-}
-
-.footer:hover {
-    box-shadow: 0 0 5px 0 dodgerblue;
 }

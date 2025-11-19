@@ -8,12 +8,12 @@
     bagpacks
 {% endblock heading %}
 {% block content %}
-     <div class="photo-container">
-    {% for bagpack in bagpacks %}
-        <img class="img-fluid rounded"
-             src="{{ bagpack.image.url }}"
-             alt="{{ bagpack.name }}">
-    {% endfor %}
+    <div class="photo-container">
+        {% for bagpack in bagpacks %}
+            <img class="img-fluid rounded"
+                 src="{{ bagpack.image.url }}"
+                 alt="{{ bagpack.name }}">
+        {% endfor %}
     </div>
 {% endblock content %}
 {% block scripts %}
