@@ -1,8 +1,8 @@
 .navbar-logo,
 .navbar-menu {
+    height: 100%;
     font-size: 15px;
     padding: 5px;
-    margin: 5px;
 }
 
 

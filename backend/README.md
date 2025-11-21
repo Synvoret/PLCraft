@@ -12,8 +12,7 @@ This project is a **Django-based web application** designed for managing user ac
 - **Welcome Module** – Landing page with base layout.
 - **API**:
   - Versioned endpoints (e.g., `/api/...`).
-  - Swagger documentation support.
-  - Custom management command `show_urls` to list all available endpoints.
+  - Swagger documentation support. `/api/swagger/`
 
 ---
 
@@ -80,10 +79,6 @@ python manage.py test
 ## 📚 API Documentation
 - Swagger UI available at: `/api/swagger/`.
 - Redoc UI available at: `/api/redoc/`.
-- Command to list all endpoints:
-   ```bash
-   python manage.py show_urls
-   ```
 
 ---
 

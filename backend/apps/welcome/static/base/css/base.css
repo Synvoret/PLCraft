@@ -30,12 +30,17 @@ main {
 .radius-blur-shadow-element {
     border-radius: 20px;
     box-shadow: 0 0 5px 0 black;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
     transition: box-shadow 0.3s;
 }
 
 .radius-blur-shadow-element:hover {
     box-shadow: 0 0 5px 0 dodgerblue;
+}
+
+button {
+    background: none;
+    border: none;
 }
 
 /* HEADING */
@@ -45,7 +50,12 @@ main {
     color: white;
     text-shadow: 4px 3px 4px #000000;
     text-align: center;
-} 
+}
+
+/* CONTENT */
+.content {
+    margin-bottom: 50px;
+}
 
 /* FOOTER */
 .footer {
@@ -53,4 +63,5 @@ main {
     text-align: center;
     padding: 5px;
     z-index: 1000;
+    margin-bottom: 10px;
 }

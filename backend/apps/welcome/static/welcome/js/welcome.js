@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const welcomeImages = document.querySelectorAll('.welcome-img');
-    const welcomeImagesContainer = document.querySelector('.welcome-imgs');
+    const welcomeImagesContainer = document.querySelector('.photo-container');
     const photoContainerRect = welcomeImagesContainer.getBoundingClientRect();
 
     const centerX = photoContainerRect.width / 2;

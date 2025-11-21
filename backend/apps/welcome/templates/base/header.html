@@ -5,14 +5,14 @@
 <nav class="navbar navbar-expand-md navbar-light bg-body-tertiary">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand navbar-logo  radius-blur-shadow-element"
+        <a class="navbar-logo radius-blur-shadow-element"
            href="{% url 'welcome' %}">
             <img src="{% static 'base/img/logo/logo_watermark.png' %}"
                  alt="Logo"
                  width="150">
         </a>
         <!-- Hamburger -->
-        <button class="navbar-toggler"
+        <button class="navbar-toggler radius-blur-shadow-element"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarToggleExternalContent"
@@ -31,6 +31,33 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'bagpacks' %}"><span class="line">bagpacks</span></a>
                 </li>
+                {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <form method="post" action="{% url 'bagpack-add' %}">
+                                {% csrf_token %}
+                                <button class="nav-link" style="background:none;border:none;">
+                                    <span class="line">bagpack-add</span>
+                                </button>
+                            </form>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button class="nav-link">
+                                <span class="line">logout</span><sup style="font-style: italic">{{ user.username }}</sup>
+                            </button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}"><span class="line">login</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}"><span class="line">register</span></a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>

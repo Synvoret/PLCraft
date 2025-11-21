@@ -1,1 +1,1 @@
-from .account_view import CustomLoginView, CustomLogoutView, RegisterView
+from .account_view import UserLoginView, UserLogoutView, UserRegisterView

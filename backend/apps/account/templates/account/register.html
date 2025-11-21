@@ -8,32 +8,29 @@
     register
 {% endblock heading %}
 {% block content %}
-    <div class="d-grid gap-2 col-6 mx-auto">
+    <div class="d-grid gap-2 col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
         <form action="" method="POST" autocomplete="off">
             {% csrf_token %}
             <div class="row mb-3">
-                <label class="col-sm-3">Username</label>
+                <label class="col-sm-3">Username*</label>
                 <div class="col">
                     <input type="text" name="username" class="form-control" required>
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3">Email</label>
-                <div class="col">
-                    <input type="email" name="email" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3">Password</label>
+                <label class="col-sm-3">Password*</label>
                 <div class="col">
                     <input type="password" name="password1" class="form-control" required>
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3">Confirm Password</label>
+                <label class="col-sm-3">Confirm Password*</label>
                 <div class="col">
                     <input type="password" name="password2" class="form-control" required>
                 </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3">* - required</label>
             </div>
             <div class="row mb-3">
                 <div class="col">
@@ -41,8 +38,6 @@
                 </div>
             </div>
         </form>
-    </div>
-    <div class="d-grid gap-2 col-6 mx-auto">
         {% if form.errors %}
             <div class="alert alert-danger">
                 {% for field, errors in form.errors.items %}

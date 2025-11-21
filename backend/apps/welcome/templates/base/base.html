@@ -19,20 +19,33 @@
         {% endblock styles %}
     </head>
     <body>
+        <!-- HEADER -->
         <div class="container fixed-top">{% include "base/header.html" %}</div>
+        <!-- HEADING -->
         <div class="container heading">
-            <h3>
+            <h4>
                 {% block heading %}
                 {% endblock heading %}
-            </h3>
+            </h4>
         </div>
+        <!-- MESSAGES -->
+        {% if messages %}
+            <div class="container messages">
+                <div class="d-grid gap-2 col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+                    {% for message in messages %}<p class="alert alert-{{ message.tags }}">{{ message }}</p>{% endfor %}
+                </div>
+            </div>
+        {% endif %}
+        <!-- CONTENT -->
         <div class="container content">
             {% block content %}
             {% endblock content %}
         </div>
+        <!-- FOOTER -->
         <div class="container fixed-bottom">
             <div class="footer radius-blur-shadow-element">&copy;P&ŁCraft 2021 - 2025 synvoret@gmail.com</div>
         </div>
+        <!-- SCRIPTs -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
                 integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
                 crossorigin="anonymous"></script>
