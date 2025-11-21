@@ -1,0 +1,9 @@
+.table-img {
+    width: 50px;
+    height: auto;
+    border: 0;
+    border-radius: 20px;
+    transition: transform .2s ease;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+}

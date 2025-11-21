@@ -34,12 +34,7 @@
                 {% if user.is_authenticated %}
                     {% if user.is_superuser %}
                         <li class="nav-item">
-                            <form method="post" action="{% url 'bagpack-add' %}">
-                                {% csrf_token %}
-                                <button class="nav-link" style="background:none;border:none;">
-                                    <span class="line">bagpack-add</span>
-                                </button>
-                            </form>
+                            <a class="nav-link" href="{% url 'collection-view' %}"><span class="line">collection</span></a>
                         </li>
                     {% endif %}
                     <li class="nav-item">

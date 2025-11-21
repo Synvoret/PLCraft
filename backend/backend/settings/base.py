@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "apps.welcome",
     "apps.bagpack",
     "apps.crochet",
+    "apps.cms",
 ]
 
 MIDDLEWARE = [
