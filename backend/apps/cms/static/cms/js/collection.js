@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
             fetch(`/get-collection-table/?collection_type=${selected}`)
                 .then(response => response.json())
                 .then(data => {
+                    console.log(data)
                     document.getElementById("collection-table").innerHTML = data.html;
                 })
                 .catch(error => console.error("Error:", error));
