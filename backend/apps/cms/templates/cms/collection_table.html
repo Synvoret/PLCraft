@@ -1,4 +1,3 @@
-
 {% load custom_tags %}
 <table id="collection-table"
        class="table table-hover table-sm text-center table-bordered align-middle"
@@ -7,9 +6,7 @@
     <thead>
         <tr>
             <th scope="col">No</th>
-            {% for field in fields %}
-                <th scope="col">{{ field|capfirst }}</th>
-            {% endfor %}
+            {% for field in fields %}<th scope="col">{{ field|capfirst }}</th>{% endfor %}
             <th scope="col">Actions</th>
         </tr>
     </thead>
@@ -22,14 +19,15 @@
                         {% if field == 'image' and item|get_item:field %}
                             <img class="table-img" src="/media/{{ item|get_item:field }}">
                         {% else %}
-                        {{ item|get_item:field }}
+                            {{ item|get_item:field }}
                         {% endif %}
                     </td>
                 {% endfor %}
                 <td>
                     <button class="btn btn-sm btn-outline-info flex-fill" title="View">👁️</button>
                     <button class="btn btn-sm btn-outline-primary flex-fill" title="Edit">✏️</button>
-                    <button class="btn btn-sm btn-outline-danger flex-fill delete-btn" title="Delete">🗑️</button>
+                    <button class="btn btn-sm btn-outline-danger flex-fill delete-btn"
+                            title="Delete">🗑️</button>
                 </td>
             </tr>
         {% empty %}
