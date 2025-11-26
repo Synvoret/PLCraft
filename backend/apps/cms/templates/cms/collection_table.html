@@ -1,5 +1,9 @@
+
 {% load custom_tags %}
-<table class="table table-hover table-sm text-center table-bordered align-middle">
+<table id="collection-table"
+       class="table table-hover table-sm text-center table-bordered align-middle"
+       data-collection-type="{{ collection_type }}"
+       data-fields="{{ fields_json|escapejs }}">
     <thead>
         <tr>
             <th scope="col">No</th>
@@ -11,21 +15,21 @@
     </thead>
     <tbody>
         {% for item in items %}
-            <tr>
+            <tr data-id="{{ item|get_item:'id' }}" data-type="{{ collection_type }}">
                 <td>{{ forloop.counter }}</td>
                 {% for field in fields %}
                     <td>
                         {% if field == 'image' and item|get_item:field %}
-                            <img class="table-img"  src="/media/{{ item|get_item:field }}">
+                            <img class="table-img" src="/media/{{ item|get_item:field }}">
                         {% else %}
-                            {{ item|get_item:field }}
+                        {{ item|get_item:field }}
                         {% endif %}
                     </td>
                 {% endfor %}
                 <td>
                     <button class="btn btn-sm btn-outline-info flex-fill" title="View">👁️</button>
                     <button class="btn btn-sm btn-outline-primary flex-fill" title="Edit">✏️</button>
-                    <button class="btn btn-sm btn-outline-danger flex-fill" title="Delete">🗑️</button>
+                    <button class="btn btn-sm btn-outline-danger flex-fill delete-btn" title="Delete">🗑️</button>
                 </td>
             </tr>
         {% empty %}
@@ -33,10 +37,10 @@
                 <td colspan="{{ fields|length|add:2 }}" class="text-muted">No data</td>
             </tr>
         {% endfor %}
-        <tr>
+        <tr id="add-row" data-type="{{ collection_type }}">
             <td colspan="{{ fields|length|add:1 }}"></td>
             <td class="d-flex justify-content-center">
-                <button class="btn btn-sm btn-outline-success">➕</button>
+                <button class="btn btn-sm btn-outline-info add-btn">➕</button>
             </td>
         </tr>
     </tbody>

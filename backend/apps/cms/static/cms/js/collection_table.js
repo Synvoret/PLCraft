@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("collection-table").innerHTML = "";
                 return; // do not send request
             }
-            fetch(`/get-collection-table/?collection_type=${selected}`)
+            fetch(`/collection-table/?collection_type=${selected}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     document.getElementById("collection-table").innerHTML = data.html;
                 })
                 .catch(error => console.error("Error:", error));
         });
     }
 });
+

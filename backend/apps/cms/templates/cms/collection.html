@@ -4,7 +4,7 @@
 {% block styles %}
     <link rel="stylesheet" href="{% static 'cms/css/collection.css' %}">
 {% endblock styles %}
-{% block heading %}collection{% endblock %}<span>s</span>
+{% block heading %}collection{% endblock %}
 {% block content %}
     <div class="d-grid gap-2 col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
         <form id="collection-form">
@@ -15,5 +15,7 @@
     </div>
 {% endblock content %}
 {% block scripts %}
-    <script src="{% static 'cms/js/collection.js' %}"></script>
+    <script src="{% static 'cms/js/collection_table.js' %}"></script>
+    <script src="{% static 'cms/js/add_item.js' %}"></script>
+    <script src="{% static 'cms/js/delete_item.js' %}"></script>
 {% endblock scripts %}

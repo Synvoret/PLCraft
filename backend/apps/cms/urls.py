@@ -1,9 +1,13 @@
 from django.urls import path
 
+from apps.cms.views.add_item import add_item
+from apps.cms.views.collection_table import collection_table
 from apps.cms.views.collection_view import collection_view
-from apps.cms.views.get_collection_table import get_collection_table
+from apps.cms.views.delete_item import delete_item
 
 urlpatterns = [
     path("collection/", collection_view, name="collection-view"),
-    path("get-collection-table/", get_collection_table, name="get-collection-table"),
+    path("collection-table/", collection_table, name="collection-table"),
+    path("collection-table/add-item", add_item, name="add-item"),
+    path("collection-table/delete-item", delete_item, name="delete-item"),
 ]
