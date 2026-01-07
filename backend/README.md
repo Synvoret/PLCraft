@@ -11,8 +11,9 @@ This project is a **Django-based web application** designed for managing user ac
 - **Crochet Module** – Manage crochet products.
 - **Welcome Module** – Landing page with base layout.
 - **API**:
-  - Versioned endpoints (e.g., `/api/...`).
-  - Swagger documentation support. `/api/swagger/`
+   - Versioned endpoints (e.g., `/api/...`).
+   - Swagger documentation support. `/api/swagger/`
+   - Redoc UI available at: `/api/redoc/`
 
 ---
 
@@ -51,17 +52,19 @@ This project is a **Django-based web application** designed for managing user ac
    git clone <repo-url>
    cd <repo-folder>
    ```
-2. **Install dependencies**:
+2. **Create virtual evironments**:
+   - python -m vevn venv
+3. **Configure environment variables**:
+   - Create `.env.dev` or `.env.prod` based on provided examples.
+4. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
-3. **Configure environment variables**:
-   - Create `.env.dev` or `.env.prod` based on provided examples.
-4. **Apply database migrations**:
+5. **Apply database migrations**:
    ```bash
    python manage.py migrate
    ```
-5. **Run development server**:
+6. **Run development server**:
    ```bash
    python manage.py runserver
    ```
@@ -76,12 +79,6 @@ python manage.py test
 
 ---
 
-## 📚 API Documentation
-- Swagger UI available at: `/api/swagger/`.
-- Redoc UI available at: `/api/redoc/`.
-
----
-
 ## 📦 Deployment
 - Use `gunicorn` or `uwsgi` for production.
 - Configure `ALLOWED_HOSTS` and set `DEBUG=False`.
@@ -90,7 +87,7 @@ python manage.py test
 ---
 
 ## 👤 Author
-Łukasz Szabat
+Lukasz Szabat
 
 ## 📜 License
 MIT License

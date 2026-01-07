@@ -1,0 +1,29 @@
+{% load custom_tags %}
+<!-- Default -->
+<template id="actions-default">
+    <td class="justify-content-center align-items-center flex-nowrap gap-1">
+        <button class="btn btn-sm btn-outline-primary edit-btn" title="Edit">✏️</button>
+        <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">🗑️</button>
+    </td>
+</template>
+<!-- Add item button -->
+<template id="actions-add-item">
+    <td class="justify-content-center align-items-center flex-nowrap gap-1">
+        <button class="btn btn-sm btn-outline-info add-btn">➕</button>
+    </td>
+</template>
+<!-- Save / Cancel -->
+<template id="actions-confirm-save">
+    <td class="justify-content-center align-items-center flex-nowrap gap-1">
+        <button class="btn btn-sm btn-outline-success confirm-save-btn" title="Save">💾</button>
+        <button class="btn btn-sm btn-outline-secondary cancel-btn" title="Cancel">❌</button>
+    </td>
+</template>
+<!-- Confirm Delete -->
+<template id="actions-confirm-delete">
+    <td class="justify-content-center align-items-center flex-nowrap gap-1">
+        <span>Sure?</span>
+        <button class="btn btn-sm btn-outline-warning confirm-delete-btn">✅</button>
+        <button class="btn btn-sm btn-outline-danger cancel-btn">❌</button>
+    </td>
+</template>

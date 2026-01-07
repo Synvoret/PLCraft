@@ -29,13 +29,13 @@
             </h4>
         </div>
         <!-- MESSAGES -->
-        {% if messages %}
-            <div class="container messages">
+        <div class="container messages">
+            {% if messages %}
                 <div class="d-grid gap-2 col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
                     {% for message in messages %}<p class="alert alert-{{ message.tags }}">{{ message }}</p>{% endfor %}
                 </div>
-            </div>
-        {% endif %}
+            {% endif %}
+        </div>
         <!-- CONTENT -->
         <div class="container content">
             {% block content %}

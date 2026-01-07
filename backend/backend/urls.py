@@ -11,6 +11,7 @@ urlpatterns = [
     path("", include("apps.welcome.urls")),
     path("", include("apps.bagpack.urls")),
     path("", include("apps.crochet.urls")),
+    path("", include("apps.cms.urls")),
 ]
 
 # Static and media files serving during development
