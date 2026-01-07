@@ -31,10 +31,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'bagpacks' %}"><span class="line">bagpacks</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'crochets' %}"><span class="line">crochets</span></a>
+                </li>
                 {% if user.is_authenticated %}
                     {% if user.is_superuser %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'collection-view' %}"><span class="line">collection</span></a>
+                            <a class="nav-link" href="{% url 'collection' %}"><span class="line">collection</span></a>
                         </li>
                     {% endif %}
                     <li class="nav-item">

@@ -11,11 +11,12 @@
             <p>Select collection</p>
             {{ form.collection_type }}
         </form>
-        <div class="table-responsive" id="collection-table"></div>
+        <div class="table-responsive" id="table">
+            {% include "cms/table/table.html" with fields=fields items=items collection_type=collection_type %}
+        </div>
     </div>
 {% endblock content %}
 {% block scripts %}
-    <script src="{% static 'cms/js/collection_table.js' %}"></script>
-    <script src="{% static 'cms/js/add_item.js' %}"></script>
-    <script src="{% static 'cms/js/delete_item.js' %}"></script>
+    <script src="{% static 'cms/js/collection/collection.js' %}"></script>
+    {% include "cms/table/_table_scripts.html" %}
 {% endblock scripts %}

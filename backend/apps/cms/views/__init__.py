@@ -1,4 +1,5 @@
 from .add_item import add_item
-from .collection_table import collection_table
-from .collection_view import collection_view
+from .collection import collection
 from .delete_item import delete_item
+from .edit_item import edit_item
+from .table import table

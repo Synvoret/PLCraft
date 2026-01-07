@@ -1,0 +1,19 @@
+{% load static %}
+{% load custom_tags %}
+<table id="collection-table"
+       class="table table-hover table-sm text-center table-bordered align-middle"
+       data-collection-type="{{ collection_type }}"
+       data-fields='{{ fields_json|safe }}'>
+    <thead>
+        {% if collection_type %}
+            {% include "cms/table/_table_thead.html" %}
+        {% endif %}
+    </thead>
+    <tbody>
+        {% if collection_type %}
+            {% include "cms/table/_table_item_row.html" with item=item fields=fields collection_type=collection_type actions='default' %}
+            {% include "cms/table/_table_add_row.html" with item=items fields=fields collection_type=collection_type actions='add-item' %}
+        {% endif %}
+    </tbody>
+</table>
+{% include "cms/table/_js_action_templates.html" %}

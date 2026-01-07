@@ -1,3 +1,4 @@
+import json
 
 from django.http import JsonResponse
 from django.template.loader import render_to_string
@@ -7,7 +8,7 @@ from apps.cms.forms import COLLECTION_CHOICES
 from apps.crochet.models import Crochet
 
 
-def collection_table(request):
+def table(request):
     collection_type = request.GET.get("collection_type")
 
     if collection_type == "bagpack":
@@ -28,7 +29,14 @@ def collection_table(request):
         and field.name not in exclude_fields
     ]
     items = list(model.objects.values(*fields, "id"))
+
     html = render_to_string(
-        "cms/collection_table.html", {"items": items, "fields": fields, "collection_type": collection_type}
+        "cms/table/table.html",
+        {
+            "items": items,
+            "fields_json": json.dumps(fields),
+            "fields": fields,
+            "collection_type": collection_type,
+        },
     )
     return JsonResponse({"html": html})

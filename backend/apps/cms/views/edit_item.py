@@ -9,10 +9,16 @@ from apps.cms.forms import BagpackForm, CrochetForm
 from apps.crochet.models import Crochet
 
 
-def add_item(request):
+def edit_item(request):
     collection_type = request.GET.get("collection_type") or request.POST.get(
         "collection_type"
     )
+    pk = request.GET.get("id") or request.POST.get("id")
+
+    if not collection_type or not pk:
+        return JsonResponse(
+            {"ok": False, "html": "No collection type or id."}, status=400
+        )
 
     if collection_type == "bagpack":
         form_class = BagpackForm
@@ -21,18 +27,30 @@ def add_item(request):
         form_class = CrochetForm
         model = Crochet
     else:
-        return JsonResponse({"ok": False, "html": "Unknown collection type."})
+        return JsonResponse(
+            {"ok": False, "html": "Unknown collection type."}, status=400
+        )
+
+    try:
+        instance = model.objects.get(pk=pk)
+    except model.DoesNotExist:
+        return JsonResponse({"ok": False, "html": "Element doesn't exist."}, status=404)
 
     if request.method == "GET":
-        form = form_class()
-        html = render_to_string("cms/table/_table_add_form.html", {"form": form})
+        form = form_class(instance=instance)
+        html = render_to_string(
+            "cms/table/_table_edit_form.html",
+            {
+                "form": form,
+                "item": instance,
+                "collection_type": collection_type,
+            },
+        )
         return JsonResponse({"ok": True, "html": html})
 
     if request.method == "POST":
-
-        collection_type = request.POST.get("collection_type")
-        form = form_class(request.POST, request.FILES)
-
+        # Zapis edycji
+        form = form_class(request.POST, request.FILES, instance=instance)
         if form.is_valid():
             instance = form.save()
         else:
@@ -60,3 +78,5 @@ def add_item(request):
             },
         )
         return JsonResponse({"ok": True, "html": html})
+
+    return JsonResponse({"ok": False, "html": "Method not allowed."}, status=405)

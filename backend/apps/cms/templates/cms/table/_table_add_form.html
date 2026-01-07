@@ -1,0 +1,28 @@
+{% load custom_tags %}
+<tr class="add-row">
+    <td class="lp-cell"></td>
+    {% for field in form.visible_fields %}
+        <td>
+            {% if field.field.widget.input_type == "file" %}
+                <input type="file"
+                       class="form-control form-control-sm"
+                       name="{{ field.name }}"
+                       accept="image/*">
+            {% elif field.field.choices %}
+                <select class="form-select form-select-sm" name="{{ field.name }}">
+                    {% for value, label in field.field.choices %}<option value="{{ value }}">{{ label }}</option>{% endfor %}
+                </select>
+            {% else %}
+                <input type="text"
+                       class="form-control form-control-sm"
+                       name="{{ field.name }}"
+                       placeholder="{{ field.label }}">
+            {% endif %}
+        </td>
+    {% endfor %}
+    <td class="d-flex justify-content-center align-items-center flex-nowrap gap-2">
+        <button class="btn btn-sm btn-outline-success save-btn" title="Save">💾</button>
+        <button class="btn btn-sm btn-outline-secondary cancel-add-btn"
+                title="Cancel">❌</button>
+    </td>
+</tr>

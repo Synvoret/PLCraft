@@ -1,0 +1,6 @@
+{% load custom_tags %}
+<tr>
+    <th scope="col">No</th>
+    {% for field in fields %}<th scope="col">{{ field|capfirst }}</th>{% endfor %}
+    <th scope="col">Actions</th>
+</tr>

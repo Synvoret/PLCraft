@@ -1,3 +1,5 @@
+import json
+
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.template.loader import render_to_string
@@ -37,8 +39,13 @@ def delete_item(request):
     items = model.objects.values(*fields, "id")
 
     html = render_to_string(
-        "cms/collection_table.html",
-        {"items": items, "fields": fields, "collection_type": collection_type},
+        "cms/table/table.html",
+        {
+            "items": items,
+            "fields_json": json.dumps(fields),
+            "fields": fields,
+            "collection_type": collection_type,
+        },
     )
 
     return JsonResponse({"ok": True, "html": html})
