@@ -71,21 +71,6 @@ This project is a **Django-based web application** designed for managing user ac
 
 ---
 
-## 🧪 Running Tests
-To run tests:
-```bash
-python manage.py test
-```
-
----
-
-## 📦 Deployment
-- Use `gunicorn` or `uwsgi` for production.
-- Configure `ALLOWED_HOSTS` and set `DEBUG=False`.
-- Optionally use Docker for containerized deployment.
-
----
-
 ## 👤 Author
 Lukasz Szabat
 
